@@ -38,12 +38,12 @@ resource "aws_subnet" "public_2" {
 
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.myvpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.myigw.id
+  }
 }
-resource "aws_route" "default" {
-  route_table_id         = aws_route_table.public.id
-  gateway_id             = aws_internet_gateway.myigw.id
-  destination_cidr_block = "0.0.0.0/0"
-}
+
 resource "aws_route_table_association" "public_1_assc" {
   route_table_id = aws_route_table.public.id
   subnet_id      = aws_subnet.public_1.id
