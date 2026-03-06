@@ -117,7 +117,7 @@ resource "aws_instance" "myinstance" {
   ami                    = var.ami
   instance_type          = var.instance_type
   count                  = 2
-  subnet_id              = [aws_subnet.public_1.id, aws_subnet.public_2.id][count.index]
+  subnet_id              = element([aws_subnet.public_1.id, aws_subnet.public_2.id], count.index)
   vpc_security_group_ids = [aws_security_group.web_sg.id]
   user_data              = <<-E0F
     #!/bin/bash
@@ -126,7 +126,7 @@ resource "aws_instance" "myinstance" {
     echo "Hello from ${count.index} ">/var/www/html/index.html
     E0F
   tags = {
-    Name = "Instance${count.index + 1}"
+    Name = "Instance-${count.index + 1}"
   }
 }
 
