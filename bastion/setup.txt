@@ -1,1 +1,0 @@
-Initialize and apply the backend first and then apply vm in order for remote backend configuration to work
