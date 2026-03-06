@@ -8,8 +8,8 @@ az           = "ap-south-1b"
 
 
 # EC2
-key           = "ak"
-ami           = "ami-01293127kdsfgh"
+key           = "prod-key"
+ami           = "ami-019715e0d74f695be"
 instance_type = "t2.micro"
 volume_size   = 20
 volume_type   = "gp2"
