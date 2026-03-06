@@ -1,9 +1,6 @@
 variable "region" {
   type = string
 }
-variable "env" {
-  type = string
-}
 
 # VPC variables
 variable "vpc_cidr" {

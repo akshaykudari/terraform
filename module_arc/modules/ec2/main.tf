@@ -1,6 +1,6 @@
 resource "aws_security_group" "mysg" {
   vpc_id = var.vpc_id
-  name   = "${var.env}-sg"
+  name   = "${terraform.workspace}-sg"
   ingress {
     from_port   = 22
     to_port     = 22
@@ -26,6 +26,6 @@ resource "aws_instance" "myinstance" {
     volume_type = var.volume_type
   }
   tags = {
-    Name = "${var.env}-instance"
+    Name = "${terraform.workspace}-instance"
   }
 }

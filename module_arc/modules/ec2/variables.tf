@@ -1,6 +1,3 @@
-variable "env" {
-  type = string
-}
 variable "ami" {
   type = string
 }

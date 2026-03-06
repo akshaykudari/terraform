@@ -5,7 +5,6 @@ module "vpc" {
   vpc_cidr     = var.vpc_cidr
   public_cidr  = var.public_cidr
   private_cidr = var.private_cidr
-  env          = var.env
   az           = var.az
 }
 
@@ -37,7 +36,6 @@ module "ec2" {
   key           = aws_key_pair.mykey.key_name
   volume_size   = var.volume_size
   volume_type   = var.volume_type
-  env           = var.env
 
   vpc_id    = module.vpc.vpc_id
   subnet_id = module.vpc.public_subnet_id

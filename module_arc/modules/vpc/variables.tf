@@ -7,10 +7,6 @@ variable "public_cidr" {
 variable "private_cidr" {
   type = string
 }
-variable "env" {
-  type = string
-}
-
 variable "az" {
   type = string
 }
