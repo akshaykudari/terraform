@@ -1,12 +1,7 @@
 provider "aws" {
   region = var.region
 }
-provider "local" {
 
-}
-provider "tls" {
-
-}
 
 # KEY Pair
 resource "tls_private_key" "privatekey" {
@@ -123,8 +118,9 @@ resource "aws_security_group" "private_sg" {
   }
 }
 
-# EC2
 
+
+# EC2
 resource "aws_instance" "myinstance" {
   ami                    = var.ami
   instance_type          = var.instance_type

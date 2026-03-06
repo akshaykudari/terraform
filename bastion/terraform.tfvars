@@ -1,14 +1,14 @@
-region = "ap-south-1"
-env    = "dev"
+region = "value"
+env = "value"
 
 # VPC
-vpc_cidr     = "10.0.0.0/16"
-public_cidr  = "10.0.1.0/24"
-private_cidr = "10.0.2.0/24"
+vpc_cidr = "value"
+public_cidr = "value"
+private_cidr = "value"
 
 # EC2
-key           = "key"
-ami           = "ami-019715e0d74f695be"
-instance_type = "t2.micro"
-volume_size   = 20
-volume_type   = "gp3"
+ami = "value"
+key = "value"
+volume_size = 0
+volume_type = "value"
+instance_type = "value"

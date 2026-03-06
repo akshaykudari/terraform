@@ -14,7 +14,7 @@ terraform {
 
   backend "s3" {
     bucket         = "vertex-terra-backend-bucket"
-    key            = "terraform.tfstate"
+    key            = "bastion/terraform.tfstate"
     dynamodb_table = "vertex-terra-backend-table"
     region         = "ap-south-1"
   }
