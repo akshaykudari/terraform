@@ -8,7 +8,7 @@ az           = "ap-south-1a"
 
 
 # EC2
-key           = "key"
+key           = "dev-key"
 ami           = "ami-019715e0d74f695be"
 instance_type = "t2.micro"
 volume_size   = 20
