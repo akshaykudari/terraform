@@ -1,5 +1,4 @@
 region = "ap-south-1"
-env    = "prod"
 
 vpc_cidr       = "12.0.0.0/16"
 public_cidr_1  = "12.0.1.0/24"

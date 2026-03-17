@@ -7,13 +7,13 @@ resource "aws_vpc" "myvpc" {
   enable_dns_hostnames = true
   enable_dns_support   = true
   tags = {
-    Name = "${var.env}-vpc"
+    Name = "${terraform.workspace}-vpc"
   }
 }
 resource "aws_internet_gateway" "myigw" {
   vpc_id = aws_vpc.myvpc.id
   tags = {
-    Name = "${var.env}-igw"
+    Name = "${terraform.workspace}-igw"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "public_1" {
   map_public_ip_on_launch = true
   availability_zone       = "${var.region}a"
   tags = {
-    Name = "${var.env}-public_1"
+    Name = "${terraform.workspace}-public_1"
   }
 }
 resource "aws_subnet" "public_2" {
@@ -32,7 +32,7 @@ resource "aws_subnet" "public_2" {
   map_public_ip_on_launch = true
   availability_zone       = "${var.region}b"
   tags = {
-    Name = "${var.env}-public_2"
+    Name = "${terraform.workspace}-public_2"
   }
 }
 resource "aws_subnet" "private_1" {
@@ -40,7 +40,7 @@ resource "aws_subnet" "private_1" {
   cidr_block        = var.private_cidr_1
   availability_zone = "${var.region}a"
   tags = {
-    Name = "${var.env}-private_1"
+    Name = "${terraform.workspace}-private_1"
   }
 }
 resource "aws_subnet" "private_2" {
@@ -48,7 +48,7 @@ resource "aws_subnet" "private_2" {
   cidr_block        = var.private_cidr_2
   availability_zone = "${var.region}b"
   tags = {
-    Name = "${var.env}-private_2"
+    Name = "${terraform.workspace}-private_2"
   }
 }
 
@@ -59,7 +59,7 @@ resource "aws_route_table" "public_rt" {
     cidr_block = "0.0.0.0/0"
   }
   tags = {
-    Name = "${var.env}-public_rt"
+    Name = "${terraform.workspace}-public_rt"
   }
 }
 resource "aws_route_table_association" "public_rt_assc_1" {
