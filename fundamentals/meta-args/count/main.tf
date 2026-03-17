@@ -1,12 +1,6 @@
 provider "aws" {
   region = var.region
 }
-provider "local" {
-
-}
-provider "tls" {
-
-}
 
 resource "tls_private_key" "private" {
   algorithm = "RSA"
