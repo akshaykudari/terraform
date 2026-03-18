@@ -1,5 +1,4 @@
 region = "ap-south-1"
-env    = "dev"
 
 identifier        = "free-tier-rds"
 engine            = "mysql"

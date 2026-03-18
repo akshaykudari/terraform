@@ -1,10 +1,6 @@
 variable "region" {
   type = string
 }
-variable "env" {
-  type = string
-}
-
 
 # DB instnace
 variable "identifier" {

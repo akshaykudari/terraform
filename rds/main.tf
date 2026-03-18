@@ -16,7 +16,7 @@ data "aws_subnets" "default" {
 # Security group
 resource "aws_security_group" "mysg" {
   vpc_id = data.aws_vpc.default.id
-  name   = "${var.env}-db-sg"
+  name   = "db-sg"
   ingress {
     from_port   = 3306
     to_port     = 3306
@@ -33,7 +33,7 @@ resource "aws_security_group" "mysg" {
 
 # DB subnet group
 resource "aws_db_subnet_group" "dbgroup" {
-  name       = "${var.env}-subnet-group"
+  name       = "db-subnet-group"
   subnet_ids = data.aws_subnets.default.ids
 }
 
