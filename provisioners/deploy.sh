@@ -1,3 +1,6 @@
 #!/bin/bash
 
-echo "hello from terraform" | sudo tee /usr/share/nginx/html/index.html
+set -e
+sudo rm -rf /var/www/html/*
+echo "hello from terraform" | sudo tee /var/www/html/index.html
+sudo systemctl restart nginx 
